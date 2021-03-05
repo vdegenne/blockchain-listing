@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "description": "",
+    "creationdate": 2009,
+    "smartcontract": "",
+    "+": "",
+    "-": "",
+    "github": "https://github.com/bitcoin/bitcoin"
+  },
+  {
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "description": "",
+    "creationdate": 2015,
+    "smartcontract": "Solidity",
+    "+": "",
+    "-": "",
+    "github": "https://github.com/ethereum?q=ethereum"
+  }
+]
