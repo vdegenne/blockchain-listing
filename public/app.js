@@ -8598,7 +8598,7 @@ let AppContainer = class AppContainer extends LitElement {
     constructor() {
         super();
         this.blockchains = [];
-        fetch('/data.json').then(async (response) => {
+        fetch('./data.json').then(async (response) => {
             this.blockchains = await response.json();
         });
     }
