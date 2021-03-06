@@ -8,17 +8,19 @@
     "smartcontract": "",
     "+": "",
     "-": "",
+    "website": "https://bitcoin.org/en/",
     "github": "https://github.com/bitcoin/bitcoin"
   },
   {
     "name": "Ethereum",
     "symbol": "ETH",
-    "codename": "",
-    "description": "",
+    "codename": "eth-erc20-ethereum",
+    "description": "test description",
     "creationdate": 2015,
     "smartcontract": "Solidity",
     "+": "",
     "-": "",
+    "website": "https://ethereum.org/en/",
     "github": "https://github.com/ethereum?q=ethereum"
   }
 ]

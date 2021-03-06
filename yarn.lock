@@ -344,6 +344,17 @@
     lit-html "^1.1.2"
     tslib "^2.0.1"
 
+"@material/mwc-top-app-bar@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@material/mwc-top-app-bar/-/mwc-top-app-bar-0.20.0.tgz#09273a3d06aae7bc974ca471bc1c6fe7fb928789"
+  integrity sha512-EHhiG2mjlQFMdVFeId/9nzOKqqaptnFycxdvojUsEbPQn4CU9h2Wly2THeeAT2DoF/UxV6DE4W/b3rzR3HzNHA==
+  dependencies:
+    "@material/mwc-base" "^0.20.0"
+    "@material/top-app-bar" "=9.0.0-canary.1c156d69d.0"
+    lit-element "^2.3.0"
+    lit-html "^1.1.2"
+    tslib "^2.0.1"
+
 "@material/notched-outline@9.0.0-canary.1c156d69d.0", "@material/notched-outline@=9.0.0-canary.1c156d69d.0":
   version "9.0.0-canary.1c156d69d.0"
   resolved "https://registry.yarnpkg.com/@material/notched-outline/-/notched-outline-9.0.0-canary.1c156d69d.0.tgz#a3821fee8afa689167d9ab951206dc1c45c2d8b4"
@@ -449,6 +460,21 @@
   integrity sha512-r1610TPwUplt4FHMk7cR06Oz1jU/G31wBIh4Frs/YIB0ZonVlI5cZdIkG0IFtNt9ZYWoDwfP/1nQBxdqrDPPhg==
   dependencies:
     "@material/feature-targeting" "9.0.0-canary.1c156d69d.0"
+
+"@material/top-app-bar@=9.0.0-canary.1c156d69d.0":
+  version "9.0.0-canary.1c156d69d.0"
+  resolved "https://registry.yarnpkg.com/@material/top-app-bar/-/top-app-bar-9.0.0-canary.1c156d69d.0.tgz#6b5c76a9cfd2abae35f45b74eb17c917db74d70d"
+  integrity sha512-VJLGCF+1vsLY/YFPVgcFCIEG/EjuY7eg7ulBwhwbERIl3pyyY3NAvISGzaeUBKg6JOcw0YqcPKcRnv+Js3KchQ==
+  dependencies:
+    "@material/animation" "9.0.0-canary.1c156d69d.0"
+    "@material/base" "9.0.0-canary.1c156d69d.0"
+    "@material/elevation" "9.0.0-canary.1c156d69d.0"
+    "@material/ripple" "9.0.0-canary.1c156d69d.0"
+    "@material/rtl" "9.0.0-canary.1c156d69d.0"
+    "@material/shape" "9.0.0-canary.1c156d69d.0"
+    "@material/theme" "9.0.0-canary.1c156d69d.0"
+    "@material/typography" "9.0.0-canary.1c156d69d.0"
+    tslib "^1.9.3"
 
 "@material/touch-target@9.0.0-canary.1c156d69d.0":
   version "9.0.0-canary.1c156d69d.0"
@@ -1046,6 +1072,11 @@ picomatch@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
+
+pwa-helpers@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/pwa-helpers/-/pwa-helpers-0.9.1.tgz#9ea22fa1996ab97df73b276cae962621c3fd2532"
+  integrity sha512-4sP/C9sSxQ3w80AATmvCEI3R+MHzCwr2RSZEbLyMkeJgV3cRk7ySZRUrQnBDSA7A0/z6dkYtjuXlkhN1ZFw3iA==
 
 resolve-path@^1.4.0:
   version "1.4.0"

@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Secret Network",
+    "description": "Blockchain open-source avec une touche apportée à la sécurisation des données.",
+    "type": "blockchain",
+    "blockchain": "Ethereum",
+    "website": "https://scrt.network/",
+    "github": "https://github.com/enigmampc/SecretNetwork"
+  }
+]
