@@ -1,7 +1,10 @@
-import {css, customElement, html, LitElement, property} from 'lit-element'
+import {css, customElement, html, LitElement, property, query} from 'lit-element'
 import { Blockchain } from '../types';
 import '@material/mwc-textfield'
 import { nothing } from 'lit-html';
+import './blockchain-form'
+import '@material/mwc-icon-button'
+import { BlockchainForm } from './blockchain-form';
 
 @customElement('app-container')
 export class AppContainer extends LitElement {
@@ -10,6 +13,8 @@ export class AppContainer extends LitElement {
 
   @property({type:Object})
   blockchain?: Blockchain;
+
+  @query('blockchain-form') blockchainForm!: BlockchainForm;
 
   constructor() {
     super()
@@ -39,12 +44,16 @@ export class AppContainer extends LitElement {
     </div>
 
     ${this.blockchain ? html`
+    <mwc-icon-button
+        @click="${() => this.blockchainForm.show()}" icon="edit"></mwc-icon-button>
     <div>
       <header>${this.blockchain.name} (${this.blockchain.creationdate})</header>
       <div class="title">Smart Contract</div>
       <div>${this.blockchain.smartcontract || 'Aucun'}</div>
     </div>
     ` : nothing}
+
+    <blockchain-form></blockchain-form>
     `
   }
 }

@@ -2,6 +2,7 @@
   {
     "name": "Bitcoin",
     "symbol": "BTC",
+    "codename": "",
     "description": "",
     "creationdate": 2009,
     "smartcontract": "",
@@ -12,6 +13,7 @@
   {
     "name": "Ethereum",
     "symbol": "ETH",
+    "codename": "",
     "description": "",
     "creationdate": 2015,
     "smartcontract": "Solidity",
