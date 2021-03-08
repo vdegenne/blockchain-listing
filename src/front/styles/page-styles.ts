@@ -29,8 +29,8 @@ export default css`
   align-items: center;
   margin: 5px 0;
 }
-.links > div > mwc-icon {
-  margin-right: 4px;
+.links a {
+  text-decoration: none;
 }
 
 a, .link {
@@ -41,5 +41,15 @@ a, .link {
 
 b {
   font-weight: 100;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 8px;
+  background-color: var(--mdc-theme-primary);
+  color: white;
+  border-radius: 4px;
+  margin: 4px;
+  white-space: nowrap;
 }
 `

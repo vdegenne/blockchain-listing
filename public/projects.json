@@ -5,6 +5,8 @@
     "type": "blockchain",
     "blockchain": "Ethereum",
     "website": "https://scrt.network/",
-    "github": "https://github.com/enigmampc/SecretNetwork"
+    "github": "https://github.com/enigmampc/SecretNetwork",
+    "chart": "https://cryptowat.ch/charts/KRAKEN:ETH-EUR",
+    "tier": "S"
   }
 ]

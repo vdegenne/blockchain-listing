@@ -12,6 +12,9 @@ import './pages/project-page'
 import './pages/blockchain-page'
 import { ProjectForm } from './project-form';
 import pageStyles from './styles/page-styles';
+import '@material/mwc-snackbar'
+import {Snackbar} from '@material/mwc-snackbar'
+import { ProjectPage } from './pages/project-page';
 
 declare global {
   interface Window {
@@ -25,7 +28,7 @@ export class AppContainer extends LitElement {
   private page: ''|'project'|'blockchain' = '';
 
   @property({type: Array})
-  private projects: Project[] = []
+  public projects: Project[] = []
 
   @property({type:Array})
   public blockchains: Blockchain[] = [];
@@ -35,8 +38,10 @@ export class AppContainer extends LitElement {
 
   private project?: Project;
 
+  @query('project-page') projectPage!: ProjectPage;
   @query('project-form') projectForm!: ProjectForm;
   @query('blockchain-form') blockchainForm!: BlockchainForm;
+  @query('mwc-snackbar') snackbar!: Snackbar;
 
   constructor() {
     super()
@@ -56,6 +61,7 @@ export class AppContainer extends LitElement {
     css`
     :host {
       --mdc-theme-primary: #616161;
+      --mdc-theme-primary: #455a64;
     }
     .tag {
       background-color: black;
@@ -99,7 +105,7 @@ export class AppContainer extends LitElement {
       <div id="content">
         ${this.page === '' ? html`
         <div class="wrapper">
-          <mwc-textfield outlined label="search (bientôt disponible)" type="search" style="width:100%;margin:10px 0 30px"></mwc-textfield>
+          <mwc-textfield label="search (bientôt disponible)" type="search" style="width:100%;margin:10px 0 30px"></mwc-textfield>
           <div class="title">Projects</div>
           <div class="container button-list">
             ${this.projects.map(p => {
@@ -135,6 +141,9 @@ export class AppContainer extends LitElement {
 
     <project-form></project-form>
     <blockchain-form></blockchain-form>
+
+
+    <mwc-snackbar></mwc-snackbar>
     `
   }
 
@@ -171,15 +180,10 @@ export class AppContainer extends LitElement {
       this.page = '';
       return;
     }
-    let hash = window.location.hash.slice(1)
-    let search: URLSearchParams;
-    const searchIndex = hash.indexOf('?')
-    if (searchIndex > 0) {
-      search = new URLSearchParams(hash.slice(searchIndex))
-      hash = hash.slice(0, searchIndex)
-    }
 
-    switch (hash) {
+    const { page, search } = this.getHash()
+
+    switch (page) {
       case 'project':
         this.page = 'project'
         this.project = this.projects.find(p => p.name === search!.get('v'))
@@ -189,5 +193,40 @@ export class AppContainer extends LitElement {
         this.blockchain = this.blockchains.find(b => b.name === search!.get('v'))
         break;
     }
+  }
+
+  updateHash () {
+    if (this.page === 'project') {
+      const search = new URLSearchParams(`v=${this.project?.name}`)
+      this.setHash('project', search, true)
+    }
+  }
+
+  toast (message: string) {
+    this.snackbar.labelText = message;
+    this.snackbar.show()
+  }
+
+  getHash () {
+    let hash = window.location.hash.slice(1)
+    let search: URLSearchParams|undefined;
+    const searchIndex = hash.indexOf('?')
+    if (searchIndex > 0) {
+      search = new URLSearchParams(hash.slice(searchIndex))
+      hash = hash.slice(0, searchIndex)
+    }
+    return { page: hash, search }
+  }
+  setHash (page: string, search: URLSearchParams, replacePreviousState = false) {
+    const hashInfo = this.getHash()
+    if (page === hashInfo.page && search === hashInfo.search) {
+      return;
+    }
+    const hash = `${page}?${search}`;
+    if (replacePreviousState) {
+      window.history.replaceState(null, '', `${window.location.pathname}#${hash}`)
+      return;
+    }
+    window.location.hash = hash;
   }
 }

@@ -1,4 +1,4 @@
-import { customElement, html, LitElement, property } from "lit-element";
+import { css, customElement, html, LitElement, property } from "lit-element";
 import { Project } from "../../types";
 import globalStyles from "../styles/global-styles";
 import pageStyles from "../styles/page-styles";
@@ -13,7 +13,21 @@ export class ProjectPage extends LitElement {
 
   static styles = [
     globalStyles,
-    pageStyles
+    pageStyles,
+    css`
+    .tier {
+      padding: 8px;
+      border: 2px solid var(--mdc-theme-primary);
+      border-radius: 5px;
+      font-size: 36px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--mdc-theme-primary);
+    }
+    `
   ]
 
   render() {
@@ -26,6 +40,19 @@ export class ProjectPage extends LitElement {
         <div class="description">${this.project.description}</div>
       </div>
       ` : nothing }
+
+      <div class="container" style="display:flex;justify-content:space-between">
+        <div>
+        ${p.type ? p.type.split(',').map(t => {
+          return html`<span class="tag">#${t}</span>`
+        }) : nothing }
+        </div>
+
+        ${p.tier ? html`
+        <div class="tier">${p.tier}</div>
+        ` : nothing }
+      </div>
+
 
       <div class="container">
         <div class="title">Details</div>
@@ -40,12 +67,23 @@ export class ProjectPage extends LitElement {
 
       <div class="links container">
         <div class="title">Links</div>
-        <div>
-          <mwc-icon>language</mwc-icon><a href="${this.project.website}" target="_blank">${this.project.website}</a>
-        </div>
-        <div>
-          <mwc-icon><img src="./images/github.png" width="24px"></mwc-icon><a href="${this.project.github}" target="_blank">${this.project.github}</a>
-        </div>
+        ${p.website ? html`
+        <a href="${p.website}" target="_blank">
+          <mwc-icon-button icon="language"></mwc-icon-button>
+        </a>` : nothing }
+
+        ${p.github ? html`
+        <a href="${p.github}" target="_blank">
+          <mwc-icon-button>
+            <img src="./images/github.png" width="24px">
+          </mwc-icon-button>
+        </a>` : nothing }
+
+        ${p.chart ? html`
+        <a href="${p.chart}" target="_blank">
+          <mwc-icon-button icon="show_chart"></mwc-icon-button>
+        </a>
+        ` : nothing}
       </div>
     </div>
     `

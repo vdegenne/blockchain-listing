@@ -92,6 +92,19 @@
     "@material/typography" "9.0.0-canary.1c156d69d.0"
     tslib "^1.9.3"
 
+"@material/icon-button@9.0.0-canary.1c156d69d.0":
+  version "9.0.0-canary.1c156d69d.0"
+  resolved "https://registry.yarnpkg.com/@material/icon-button/-/icon-button-9.0.0-canary.1c156d69d.0.tgz#076205e1fa563f946c65429a58b7553e2e50b68d"
+  integrity sha512-HSt3rCnG+ktAYG9R2obzwqHoZtsaNRAXe7jEyq4FK1cjucO0MLPEUKFFEOE7tPwRylNzNkzysjL6gTj6wZPsCQ==
+  dependencies:
+    "@material/base" "9.0.0-canary.1c156d69d.0"
+    "@material/density" "9.0.0-canary.1c156d69d.0"
+    "@material/feature-targeting" "9.0.0-canary.1c156d69d.0"
+    "@material/ripple" "9.0.0-canary.1c156d69d.0"
+    "@material/rtl" "9.0.0-canary.1c156d69d.0"
+    "@material/theme" "9.0.0-canary.1c156d69d.0"
+    tslib "^1.9.3"
+
 "@material/line-ripple@9.0.0-canary.1c156d69d.0", "@material/line-ripple@=9.0.0-canary.1c156d69d.0":
   version "9.0.0-canary.1c156d69d.0"
   resolved "https://registry.yarnpkg.com/@material/line-ripple/-/line-ripple-9.0.0-canary.1c156d69d.0.tgz#a0b275edbd9a039a1143ec4d8789a29e903c90af"
@@ -317,6 +330,17 @@
     lit-html "^1.1.2"
     tslib "^2.0.1"
 
+"@material/mwc-snackbar@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@material/mwc-snackbar/-/mwc-snackbar-0.20.0.tgz#46b52ee8ad64a3ad4b5a8959f8970d2d1b74b205"
+  integrity sha512-cJ8d09vhKTxtNl2oBaa/kZr4sF2IJfuS2ss8HkkGm+AMRB8S+VAgNfAXptGalcEWcY0dMFONdcVkb3FejHjVEg==
+  dependencies:
+    "@material/mwc-base" "^0.20.0"
+    "@material/snackbar" "=9.0.0-canary.1c156d69d.0"
+    lit-element "^2.3.0"
+    lit-html "^1.1.2"
+    tslib "^2.0.1"
+
 "@material/mwc-textarea@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@material/mwc-textarea/-/mwc-textarea-0.20.0.tgz#529896903c4d03920a73e0f8616133db656c5194"
@@ -433,6 +457,25 @@
     "@material/feature-targeting" "9.0.0-canary.1c156d69d.0"
     "@material/rtl" "9.0.0-canary.1c156d69d.0"
     "@material/theme" "9.0.0-canary.1c156d69d.0"
+
+"@material/snackbar@=9.0.0-canary.1c156d69d.0":
+  version "9.0.0-canary.1c156d69d.0"
+  resolved "https://registry.yarnpkg.com/@material/snackbar/-/snackbar-9.0.0-canary.1c156d69d.0.tgz#80249c5e79092bd2e2118ec9e4344b09759fba5a"
+  integrity sha512-lLo+SwQx32xyPRomERUiupPyNFwTrDGUJVEEjtgXlIyb+CrHQXd4crZnuZroACVCZcMMe1oXIGa3lif/SsPqwQ==
+  dependencies:
+    "@material/animation" "9.0.0-canary.1c156d69d.0"
+    "@material/base" "9.0.0-canary.1c156d69d.0"
+    "@material/button" "9.0.0-canary.1c156d69d.0"
+    "@material/dom" "9.0.0-canary.1c156d69d.0"
+    "@material/elevation" "9.0.0-canary.1c156d69d.0"
+    "@material/feature-targeting" "9.0.0-canary.1c156d69d.0"
+    "@material/icon-button" "9.0.0-canary.1c156d69d.0"
+    "@material/ripple" "9.0.0-canary.1c156d69d.0"
+    "@material/rtl" "9.0.0-canary.1c156d69d.0"
+    "@material/shape" "9.0.0-canary.1c156d69d.0"
+    "@material/theme" "9.0.0-canary.1c156d69d.0"
+    "@material/typography" "9.0.0-canary.1c156d69d.0"
+    tslib "^1.9.3"
 
 "@material/textfield@=9.0.0-canary.1c156d69d.0":
   version "9.0.0-canary.1c156d69d.0"

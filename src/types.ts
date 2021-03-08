@@ -15,10 +15,12 @@
 export const projectProperties = [
   { name: 'name', fullname: 'Name', type: 'textfield' },
   { name: 'description', fullname: 'Description', type: 'textarea' },
-  { name: 'type', fullname: 'Type', type: ['blockchain', 'DeFi', 'protocol', 'shitcoin', 'NFT', 'Token', 'scam'] as const },
+  { name: 'type', fullname: 'Type', type: 'textfield' },
   { name: 'blockchain', fullname: 'Blockchain', type: [] as const },
   { name: 'website', fullname: 'Website', type: 'textfield' },
-  { name: 'github', fullname: 'Github', type: 'textfield' }
+  { name: 'github', fullname: 'Github', type: 'textfield' },
+  { name: 'chart', fullname: 'Chart', type: 'textfield', helper: 'direct link to the chart page' },
+  { name: 'tier', fullname: 'Tier', type: ['S'] as const }
 ] as const;
 
 export const blockchainProperties = [
@@ -33,7 +35,10 @@ export const blockchainProperties = [
   { name: 'minus', fullname: '-', type: 'textarea' },
   { name: 'website', fullname: 'Website', type: 'textfield' },
   { name: 'github', fullname: 'Github', type: 'textfield' },
-] as const;
+];
+
+export const projectTypes = ['blockchain', 'DeFi', 'protocol', 'Bridge', 'NFT', 'Token', 'scam', 'shitcoin'] as const;
+export type ProjectTypes = typeof projectTypes[number];
 
 // export type Blockchain = {
 //   name: string;
