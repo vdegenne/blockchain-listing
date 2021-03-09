@@ -11,6 +11,7 @@
 //   github: ''
 // }
 
+export const tiers = ['S', 'A', 'B', 'C', 'D', 'E'] as const;
 
 export const projectProperties = [
   { name: 'name', fullname: 'Name', type: 'textfield' },
@@ -20,7 +21,7 @@ export const projectProperties = [
   { name: 'website', fullname: 'Website', type: 'textfield' },
   { name: 'github', fullname: 'Github', type: 'textfield' },
   { name: 'chart', fullname: 'Chart', type: 'textfield', helper: 'direct link to the chart page' },
-  { name: 'tier', fullname: 'Tier', type: ['S'] as const }
+  { name: 'tier', fullname: 'Tier', type: tiers }
 ] as const;
 
 export const blockchainProperties = [
@@ -37,7 +38,7 @@ export const blockchainProperties = [
   { name: 'github', fullname: 'Github', type: 'textfield' },
 ];
 
-export const projectTypes = ['blockchain', 'DeFi', 'protocol', 'Bridge', 'NFT', 'Token', 'scam', 'shitcoin'] as const;
+export const projectTypes = ['blockchain', 'DeFi', 'protocol', 'Sharding', 'Bridge', 'NFT', 'Token', 'scam', 'shitcoin'] as const;
 export type ProjectTypes = typeof projectTypes[number];
 
 // export type Blockchain = {

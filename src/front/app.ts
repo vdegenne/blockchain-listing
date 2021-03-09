@@ -1,5 +1,5 @@
 import {css, customElement, html, LitElement, property, query} from 'lit-element'
-import { Blockchain, Project } from '../types';
+import { Blockchain, Project, projectProperties, tiers } from '../types';
 import '@material/mwc-textfield'
 import { nothing } from 'lit-html';
 import './blockchain-form'
@@ -15,6 +15,8 @@ import pageStyles from './styles/page-styles';
 import '@material/mwc-snackbar'
 import {Snackbar} from '@material/mwc-snackbar'
 import { ProjectPage } from './pages/project-page';
+import '@material/mwc-tab-bar'
+import '@material/mwc-tab'
 
 declare global {
   interface Window {
@@ -37,6 +39,9 @@ export class AppContainer extends LitElement {
   blockchain?: Blockchain;
 
   private project?: Project;
+
+  @property()
+  private tier = 'S'
 
   @query('project-page') projectPage!: ProjectPage;
   @query('project-form') projectForm!: ProjectForm;
@@ -76,6 +81,15 @@ export class AppContainer extends LitElement {
     }
     .button-list > mwc-button {
       margin: 4px 2px;
+    }
+    .tiers {
+      margin: 12px;
+    }
+    .tier {
+      display: none
+    }
+    .tier[show] {
+      display: block
     }
     `
   ];
@@ -125,6 +139,27 @@ export class AppContainer extends LitElement {
                 @click="${() => this.goBlockchain(b)}">${b.name}</mwc-button>`;
             })}
             <mwc-button outlined icon="add">add blockchain</mwc-button>
+          </div>
+
+
+          <div class="title">Tiers List</div>
+          <mwc-tab-bar
+            @MDCTabBar:activated="${e => this.tier = tiers[e.detail.index]}">
+            ${tiers.map(tier => {
+              return html`<mwc-tab label="${tier}"></mwc-tab>`
+            })}
+          </mwc-tab-bar>
+
+          <div class="tiers">
+          ${tiers.map(tier => {
+            return html`
+            <div class="tier button-list" ?show="${tier === this.tier}">
+              ${this.projects.filter(p => p.tier === tier).map(p => {
+                return html`<mwc-button raised>${p.name}</mwc-button>`
+              })}
+            </div>
+            `
+          })}
           </div>
         </div>
         ` : nothing }
