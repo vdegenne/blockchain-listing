@@ -2984,7 +2984,7 @@ const blockchainProperties = [
     { name: 'website', fullname: 'Website', type: 'textfield' },
     { name: 'github', fullname: 'Github', type: 'textfield' },
 ];
-const projectTypes = ['blockchain', 'DeFi', 'protocol', 'Sharding', 'Bridge', 'NFT', 'Token', 'scam', 'shitcoin'];
+const projectTypes = ['blockchain', 'DeFi', 'protocol', 'sharding', 'Bridge', 'NFT', 'Token', 'scam', 'shitcoin'];
 
 /**
  * @license
@@ -16740,7 +16740,7 @@ let AppContainer = class AppContainer extends LitElement {
           <div class="container button-list">
             ${this.projects.map(p => {
             return html `
-              <mwc-button unelevated
+              <mwc-button raised
                 @click="${() => this.goProject(p)}">${p.name}</mwc-button>`;
         })}
             <mwc-button outlined icon="add"
@@ -16751,7 +16751,7 @@ let AppContainer = class AppContainer extends LitElement {
           <div class="container button-list">
             ${this.blockchains.map(b => {
             return html `
-              <mwc-button unelevated
+              <mwc-button raised
                 @click="${() => this.goBlockchain(b)}">${b.name}</mwc-button>`;
         })}
             <mwc-button outlined icon="add">add blockchain</mwc-button>

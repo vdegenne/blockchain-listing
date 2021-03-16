@@ -38,7 +38,7 @@ export const blockchainProperties = [
   { name: 'github', fullname: 'Github', type: 'textfield' },
 ];
 
-export const projectTypes = ['blockchain', 'DeFi', 'protocol', 'Sharding', 'Bridge', 'NFT', 'Token', 'scam', 'shitcoin'] as const;
+export const projectTypes = ['blockchain', 'DeFi', 'protocol', 'sharding', 'Bridge', 'NFT', 'Token', 'scam', 'shitcoin'] as const;
 export type ProjectTypes = typeof projectTypes[number];
 
 // export type Blockchain = {

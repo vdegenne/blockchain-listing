@@ -124,7 +124,7 @@ export class AppContainer extends LitElement {
           <div class="container button-list">
             ${this.projects.map(p => {
               return html`
-              <mwc-button unelevated
+              <mwc-button raised
                 @click="${() => this.goProject(p)}">${p.name}</mwc-button>`;
             })}
             <mwc-button outlined icon="add"
@@ -135,7 +135,7 @@ export class AppContainer extends LitElement {
           <div class="container button-list">
             ${this.blockchains.map(b => {
               return html`
-              <mwc-button unelevated
+              <mwc-button raised
                 @click="${() => this.goBlockchain(b)}">${b.name}</mwc-button>`;
             })}
             <mwc-button outlined icon="add">add blockchain</mwc-button>
